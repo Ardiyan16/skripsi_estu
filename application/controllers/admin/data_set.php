@@ -55,7 +55,7 @@ class data_set extends CI_Controller
         $var['prob_fight'] = $this->m_dataset->probabilitas_fight() / $this->m_dataset->total();
         $var['prob_tgr'] = $this->m_dataset->probabilitas_tgr() / $this->m_dataset->total();
         $var['prob_serhin'] = $this->m_dataset->probabilitas_serhin() / $this->m_dataset->total();
-        $var['mean'] = $this->m_dataset->get_mean();
+        $var['mean'] = $this->m_dataset->perhitungan();
         $this->load->view('admin/page/data_latih', $var);
     }
 
@@ -128,9 +128,14 @@ class data_set extends CI_Controller
         redirect('admin/data_set/data_uji');
     }
 
+    public function proses_perhitungan()
+    {
+        
+    }
+
     public function get_mean()
     {
-        $data = $this->m_dataset->get_mean();
+        $data = $this->m_dataset->perhitungan();
         var_dump($data);
     }
 }

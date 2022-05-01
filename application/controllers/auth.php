@@ -27,7 +27,7 @@ class auth extends CI_Controller
 
 	public function registrasi()
 	{
-		$this->form_validation->set_rules('nama', 'Nama', 'required|trim', ['required' => 'nama tidak boleh kosong']);
+		$this->form_validation->set_rules('nama', 'Nama', 'required|trim', ['required' => 'nama lengkap tidak boleh kosong']);
 		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[users.email]', ['is_unique' => 'email anda telah terdaftar'], ['required' => 'Email tidak boleh kosong']);
 		$this->form_validation->set_rules('asal_unit', 'Asal Unit', 'required|trim', ['required' => 'asal unit anda tidak boleh kosong']);
 		$this->form_validation->set_rules('password', 'Password', 'required|trim', ['required' => 'password tidak boleh kosong']);

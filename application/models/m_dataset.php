@@ -131,7 +131,7 @@ class m_dataset extends CI_Model
         return $this->db->count_all_results('data_latih');
     }
 
-    public function get_mean()
+    public function perhitungan()
     {
 
         $this->db->where('kategori', 'Fight');
@@ -292,6 +292,11 @@ class m_dataset extends CI_Model
         $this->db->where('kategori', 'Serang Hindar');
         $rtsh = $this->db->get('data_latih')->result();
 
+
+        //query perhitungan gausian
+        $this->db->select('speed', 'nama');
+        $gnbf_s = $this->db->get('data_uji')->result();
+
         //perhitungan
 
         //mean fight
@@ -415,7 +420,8 @@ class m_dataset extends CI_Model
             'sdsh_stamina' => $sdsh_stamina,
             'sdsh_agility' => $sdsh_agility,
             'sdsh_kedisiplinan' => $sdsh_kedisiplinan,
-            'sdsh_teknik' => $sdsh_teknik
+            'sdsh_teknik' => $sdsh_teknik,
+            'gbnf_s' => $gnbf_s
         );
 
         return $data;
