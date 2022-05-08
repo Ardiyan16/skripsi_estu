@@ -5,8 +5,8 @@
 <div class="right_col" role="main">
     <div class="page-title">
         <div class="title_left">
-            <h3><i class="fa fa-calculator"></i> Perhitungan Gausian Naive Bayes</h3>
-            <a href="<?= base_url('admin/data_set/add_datalatih') ?>" style="margin-left: 15px; margin-top: 20px;" class="btn btn-success"><i class="fa fa-calculator"></i> Hitung Gausian</a>
+            <h3><i class="fa fa-calculator"></i> Data Uji Gausian Naive Bayes</h3>
+            <a href="<?= base_url('admin/data_set/perhitungan2') ?>" style="margin-left: 15px; margin-top: 20px;" class="btn btn-success"><i class="fa fa-calculator"></i> Hitung Gausian</a>
         </div>
     </div>
     <div class="clearfix"></div>

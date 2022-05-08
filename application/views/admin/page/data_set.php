@@ -57,7 +57,7 @@
                                             <td><?= $d->kategori ?></td>
                                             <td>
                                                 <a href="#editdataset<?= $d->id ?>" data-toggle="modal" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
-                                                <a onclick="return confirm('apakah anda yakin ?')" href="<?= base_url('admin/data_set/delete_dataset/'. $d->id) ?>" class="btn btn-danger btn-sm tombol-hapus"><i class="fa fa-trash"></i> Hapus</a>
+                                                <a onclick="return confirm('apakah anda yakin ?')" href="<?= base_url('admin/data_set/delete_dataset/' . $d->id) ?>" class="btn btn-danger btn-sm tombol-hapus"><i class="fa fa-trash"></i> Hapus</a>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>

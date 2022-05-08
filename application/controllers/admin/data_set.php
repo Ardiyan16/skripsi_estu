@@ -93,11 +93,26 @@ class data_set extends CI_Controller
         $this->load->view('admin/page/perhitungan', $var);
     }
 
+    public function perhitungan2()
+    {
+        $var['title'] = 'admin-perhitungan';
+        $var['perhitungan'] = $this->m_dataset->perhitungan();
+        $this->load->view('admin/page/perhitungan2', $var);
+    }
+
+    public function hasil_prediksi()
+    {
+        $var['title'] = 'admin-hasil_prediksi';
+        $var['hasil'] = $this->m_dataset->perhitungan();
+        $this->load->view('admin/page/hasil_prediksi', $var);
+    }
+
     public function data_uji()
     {
         $var['title'] = 'admin-data uji';
         $var['datauji'] = $this->m_dataset->get_datauji();
         $var['datauji2'] = $this->m_dataset->get_datauji();
+        $var['perhitungan'] = $this->m_dataset->perhitungan();
         $this->load->view('admin/page/data_uji', $var);
     }
 
