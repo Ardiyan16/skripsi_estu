@@ -259,7 +259,7 @@
                                         <td>
                                             <ul>
                                                 <?php foreach ($perhitungan['gnbs_serhin'] as $gns_sh) { ?>
-                                                    <li><?= round($gns_sh, 5) ?></li>
+                                                    <li><?= $gns_sh ?></li>
                                                 <?php } ?>
                                             </ul>
                                         </td>

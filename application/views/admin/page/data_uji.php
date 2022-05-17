@@ -54,7 +54,7 @@
                                             <td><?= $d->agility ?></td>
                                             <td><?= $d->kedisiplinan ?></td>
                                             <td><?= $d->teknik ?></td>
-                                            <td>?</td>
+                                            <td><?= $d->kategori ?></td>
                                             <td>
                                                 <a href="#editdatauji<?= $d->id ?>" data-toggle="modal" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
                                                 <a onclick="return confirm('apakah anda yakin ?')" href="<?= base_url('admin/data_set/delete_datauji/' . $d->id) ?>" class="btn btn-danger btn-sm tombol-hapus"><i class="fa fa-trash"></i> Hapus</a>
@@ -75,7 +75,7 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Update Data Set</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Update Data Uji</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -125,7 +125,7 @@
                                 <input type="number" class="form-control" value="<?= $dt->teknik ?>" name="teknik" placeholder="Gerak Teknik...">
                             </div>
                         </div>
-                        <!-- <div class="form-group row">
+                        <div class="form-group row">
                             <label class="control-label col-md-3 col-sm-3 ">Kategori</label>
                             <div class="col-md-9 col-sm-9 ">
                                 <select name="kategori" class="form-control">
@@ -140,7 +140,8 @@
                                             } ?> value="Serang Hindar">Serang Hindar</option>
                                 </select>
                             </div>
-                        </div> -->
+                        </div>
+
 
                         <div class="ln_solid"></div>
                         <div class="form-group">

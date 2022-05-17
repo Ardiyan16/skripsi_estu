@@ -5,15 +5,14 @@
 <div class="right_col" role="main">
     <div class="page-title">
         <div class="title_left">
-            <h3><i class="fa fa-calculator"></i> Data Uji Gausian Naive Bayes</h3>
-            <a href="<?= base_url('admin/data_set/perhitungan2') ?>" style="margin-left: 15px; margin-top: 20px;" class="btn btn-success"><i class="fa fa-calculator"></i> Hitung Gausian</a>
+            <h3><i class="fa fa-table"></i> Tabel List Data Perhitungan</h3>
         </div>
     </div>
     <div class="clearfix"></div>
     <div class="col-md-12 col-sm-12 ">
         <div class="x_panel">
             <div class="x_title">
-                <h2>Perhitungan</h2>
+                <h2>Data perhitungan</h2>
                 <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -38,6 +37,7 @@
                                         <th>Kedisiplinan</th>
                                         <th>Gerak Teknik</th>
                                         <th>Kategori</th>
+                                        <th>Option</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -54,6 +54,9 @@
                                             <td><?= $d->kedisiplinan ?></td>
                                             <td><?= $d->teknik ?></td>
                                             <td>?</td>
+                                            <td>
+                                            <a href="<?= base_url('admin/data_set/konvert_nb/' . $d->id) ?>" class="btn btn-success btn-sm"><i class="fa fa-exchange"></i> Konversi dan hitung</a>
+                                            </td>
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>
@@ -70,33 +73,24 @@
     <?php if ($this->session->flashdata('insert')) : ?>
         Swal.fire({
             icon: 'success',
-            title: 'Data latih berhasil disimpan',
+            title: 'Data uji berhasil disimpan',
             showConfirmButton: true,
             // timer: 1500
         })
     <?php elseif ($this->session->flashdata('update')) : ?>
         Swal.fire({
             icon: 'success',
-            title: 'Data latih berhasil diupdate',
+            title: 'Data uji berhasil diupdate',
             showConfirmButton: true,
             // timer: 1500
         })
     <?php elseif ($this->session->flashdata('delete')) : ?>
         Swal.fire({
             icon: 'success',
-            title: 'Data latih Berhasil dihapus',
+            title: 'Data uji Berhasil dihapus',
             showConfirmButton: true,
             // timer: 1500
         })
     <?php endif ?>
-    
-    // $.ajax({
-    //     url: "<?php echo base_url('admin/data_set/get_mean') ?>",
-    //     type: 'GET',
-    //     dataType: "JSON",
-    //     success: function(data) {
-    //         console.log('data', data);
-    //     }
-    // })
 </script>
 <?php $this->load->view('partials/js.php') ?>

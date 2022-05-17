@@ -5,10 +5,16 @@ class m_dataset extends CI_Model
     private $dataset = 'data_set';
     private $datalatih = 'data_latih';
     private $datauji = 'data_uji';
+    private $konversi = 'konversi_dataset';
 
     public function get_dataset()
     {
         return $this->db->get($this->dataset)->result();
+    }
+
+    public function get_konversi()
+    {
+        return $this->db->get($this->konversi)->result();
     }
 
     public function get_datalatih()
@@ -33,6 +39,20 @@ class m_dataset extends CI_Model
         $this->teknik = $post['teknik'];
         $this->kategori = $post['kategori'];
         $this->db->insert($this->dataset, $this);
+    }
+
+    public function save_konversi()
+    {
+        $post = $this->input->post();
+        $this->nama = $post['nama'];
+        $this->speed = $post['speed'];
+        $this->power = $post['power'];
+        $this->stamina = $post['stamina'];
+        $this->agility = $post['agility'];
+        $this->kedisiplinan = $post['kedisiplinan'];
+        $this->teknik = $post['teknik'];
+        $this->kategori = $post['kategori'];
+        $this->db->insert($this->konversi, $this);
     }
 
     public function update_dataset()
@@ -329,10 +349,13 @@ class m_dataset extends CI_Model
         //mean serhin
         $mean_speed_serhin = $speed_serhin[0]->speed_serhin / $jml_serhin;
         $mean_power_serhin = $power_serhin[0]->power_serhin / $jml_serhin;
+        // $mean_power_serhin2 = 59.75;
         $mean_stamina_serhin = $stamina_serhin[0]->stamina_serhin / $jml_serhin;
         $mean_agility_serhin = $agility_serhin[0]->agility_serhin / $jml_serhin;
         $mean_kedisiplinan_serhin = $kedisiplinan_serhin[0]->kedisiplinan_serhin / $jml_serhin;
+        // $mean_kedisiplinan_serhin2 = 65.75;
         $mean_teknik_serhin = $teknik_serhin[0]->teknik_serhin / $jml_serhin;
+        // $mean_teknik_serhin2 = 64.75;
 
         //standar deviasi fight
         $hbf = $jml_fight - 1;
@@ -511,33 +534,33 @@ class m_dataset extends CI_Model
         }
 
         //gausian serhin speed
-        foreach($gnb_sss as $gnb_s) {
-            $gnbs_serhin[] = 1 / sqrt(2 * 3.14 * $sdsh_speed) * exp(-(pow($gnb_s->speed - $mean_speed_serhin, 2) / (2 * pow($sdsh_speed, 2))));
+        foreach($gnb_sss as $gnb_sss) {
+            $gnbs_serhin[] = 1 / sqrt(2 * 3.14 * $sdsh_speed) * exp(-(pow($gnb_sss->speed - $mean_speed_serhin, 2) / (2 * pow($sdsh_speed, 2))));
         }
 
         //gausian serhin power
-        foreach($gnb_ppp as $gnb_p) {
-            $gnbp_serhin[] = 1 / sqrt(2 * 3.14 * $sdsh_power) * exp(-(pow($gnb_p->power - $mean_power_serhin, 2) / (2 * pow($sdsh_power, 2))));
+        foreach($gnb_ppp as $gnb_ppp) {
+            $gnbp_serhin[] = 1 / sqrt(2 * 3.14 * $sdsh_power) * exp(-(pow($gnb_ppp->power - $mean_power_serhin, 2) / (2 * pow($sdsh_power, 2))));
         }
 
         //gausian serhin stamina
-        foreach($gnb_sttt as $gnb_st) {
-            $gnbst_serhin[] = 1 / sqrt(2 * 3.14 * $sdsh_stamina) * exp(-(pow($gnb_st->stamina - $mean_stamina_serhin, 2) / (2 * pow($sdsh_stamina, 2))));
+        foreach($gnb_sttt as $gnb_sttt) {
+            $gnbst_serhin[] = 1 / sqrt(2 * 3.14 * $sdsh_stamina) * exp(-(pow($gnb_sttt->stamina - $mean_stamina_serhin, 2) / (2 * pow($sdsh_stamina, 2))));
         }
 
         //gausian serhin agility
-        foreach($gnb_aaa as $gnb_a) {
-            $gnba_serhin[] = 1 / sqrt(2 * 3.14 * $sdsh_agility) * exp(-(pow($gnb_a->agility - $mean_agility_serhin, 2) / (2 * pow($sdsh_agility, 2))));
+        foreach($gnb_aaa as $gnb_aaa) {
+            $gnba_serhin[] = 1 / sqrt(2 * 3.14 * $sdsh_agility) * exp(-(pow($gnb_aaa->agility - $mean_agility_serhin, 2) / (2 * pow($sdsh_agility, 2))));
         }
 
         //gausian serhin kedisiplinan
-        foreach($gnb_kkk as $gnb_k) {
-            $gnbk_serhin[] = 1 / sqrt(2 * 3.14 * $sdsh_kedisiplinan) * exp(-(pow($gnb_k->kedisiplinan - $mean_kedisiplinan_serhin, 2) / (2 * pow($sdsh_kedisiplinan, 2))));
+        foreach($gnb_kkk as $gnb_kkk) {
+            $gnbk_serhin[] = 1 / sqrt(2 * 3.14 * $sdsh_kedisiplinan) * exp(-(pow($gnb_kkk->kedisiplinan - $mean_kedisiplinan_serhin, 2) / (2 * pow($sdsh_kedisiplinan, 2))));
         }
 
         //gausian serhin teknik
-        foreach($gnb_ttt as $gnb_t) {
-            $gnbt_serhin[] = 1 / sqrt(2 * 3.14 * $sdsh_teknik) * exp(-(pow($gnb_t->teknik - $mean_teknik_serhin, 2) / (2 * pow($sdsh_teknik, 2))));
+        foreach($gnb_ttt as $gnb_ttt) {
+            $gnbt_serhin[] = 1 / sqrt(2 * 3.14 * $sdsh_teknik) * exp(-(pow($gnb_ttt->teknik - $mean_teknik_serhin, 2) / (2 * pow($sdsh_teknik, 2))));
         }
 
         //hitung hasil kategori fight
@@ -581,7 +604,7 @@ class m_dataset extends CI_Model
         $hp1 = max($prediksi_1);
 
         if($hp1 == $hkf_1) {
-            $kategori_pertandingan_1 = 'Fighter';
+            $kategori_pertandingan_1 = 'Fight';
         } elseif($hp1 == $hkt_1) {
             $kategori_pertandingan_1 = 'TGR';
         } elseif($hp1 == $hks_1) {
@@ -591,7 +614,7 @@ class m_dataset extends CI_Model
         $prediksi_2 = [$hkf_2, $hkt_2, $hks_2];
         $hp2 = max($prediksi_2);
         if($hp2 == $hkf_2) {
-            $kategori_pertandingan_2 = 'Fighter';
+            $kategori_pertandingan_2 = 'Fight';
         } elseif($hp2 == $hkt_2) {
             $kategori_pertandingan_2 = 'TGR';
         } elseif($hp2 == $hks_2) {
@@ -601,7 +624,7 @@ class m_dataset extends CI_Model
         $prediksi_3 = [$hkf_3, $hkt_3, $hks_3];
         $hp3 = max($prediksi_3);
         if($hp3 == $hkf_3) {
-            $kategori_pertandingan_3 = 'Fighter';
+            $kategori_pertandingan_3 = 'Fight';
         } elseif($hp3 == $hkt_3) {
             $kategori_pertandingan_3 = 'TGR';
         } elseif($hp3 == $hks_3) {
@@ -611,7 +634,7 @@ class m_dataset extends CI_Model
         $prediksi_4 = [$hkf_4, $hkt_4, $hks_4];
         $hp4 = max($prediksi_4);
         if($hp4 == $hkf_4) {
-            $kategori_pertandingan_4 = 'Fighter';
+            $kategori_pertandingan_4 = 'Fight';
         } elseif($hp4 == $hkt_4) {
             $kategori_pertandingan_4 = 'TGR';
         } elseif($hp4 == $hks_4) {
@@ -621,7 +644,7 @@ class m_dataset extends CI_Model
         $prediksi_5 = [$hkf_5, $hkt_5, $hks_5];
         $hp5 = max($prediksi_5);
         if($hp5 == $hkf_5) {
-            $kategori_pertandingan_5 = 'Fighter';
+            $kategori_pertandingan_5 = 'Fight';
         } elseif($hp5 == $hkt_5) {
             $kategori_pertandingan_5 = 'TGR';
         } elseif($hp5 == $hks_5) {
@@ -631,7 +654,7 @@ class m_dataset extends CI_Model
         $prediksi_6 = [$hkf_6, $hkt_6, $hks_6];
         $hp6 = max($prediksi_6);
         if($hp6 == $hkf_6) {
-            $kategori_pertandingan_6 = 'Fighter';
+            $kategori_pertandingan_6 = 'Fight';
         } elseif($hp6 == $hkt_6) {
             $kategori_pertandingan_6 = 'TGR';
         } elseif($hp6 == $hks_6) {
@@ -641,7 +664,7 @@ class m_dataset extends CI_Model
         $prediksi_7 = [$hkf_7, $hkt_7, $hks_7];
         $hp7 = max($prediksi_7);
         if($hp7 == $hkf_7) {
-            $kategori_pertandingan_7 = 'Fighter';
+            $kategori_pertandingan_7 = 'Fight';
         } elseif($hp7 == $hkt_7) {
             $kategori_pertandingan_7 = 'TGR';
         } elseif($hp7 == $hks_7) {
@@ -651,7 +674,7 @@ class m_dataset extends CI_Model
         $prediksi_8 = [$hkf_8, $hkt_8, $hks_8];
         $hp8 = max($prediksi_8);
         if($hp8 == $hkf_8) {
-            $kategori_pertandingan_8 = 'Fighter';
+            $kategori_pertandingan_8 = 'Fight';
         } elseif($hp8 == $hkt_8) {
             $kategori_pertandingan_8 = 'TGR';
         } elseif($hp8 == $hks_8) {
@@ -661,7 +684,7 @@ class m_dataset extends CI_Model
         $prediksi_9 = [$hkf_9, $hkt_9, $hks_9];
         $hp9 = max($prediksi_9);
         if($hp9 == $hkf_9) {
-            $kategori_pertandingan_9 = 'Fighter';
+            $kategori_pertandingan_9 = 'Fight';
         } elseif($hp9 == $hkt_9) {
             $kategori_pertandingan_9 = 'TGR';
         } elseif($hp9 == $hks_9) {
@@ -671,7 +694,7 @@ class m_dataset extends CI_Model
         $prediksi_10 = [$hkf_10, $hkt_10, $hks_10];
         $hp10 = max($prediksi_10);
         if($hp10 == $hkf_10) {
-            $kategori_pertandingan_10 = 'Fighter';
+            $kategori_pertandingan_10 = 'Fight';
         } elseif($hp10 == $hkt_10) {
             $kategori_pertandingan_10 = 'TGR';
         } elseif($hp10 == $hks_10) {
@@ -679,6 +702,7 @@ class m_dataset extends CI_Model
         }
 
         $data = array(
+            // $power_serhin,
             'mean_speed_fight' => $mean_speed_fight,
             'mean_power_fight' => $mean_power_fight,
             'mean_stamina_fight' => $mean_stamina_fight,
@@ -731,7 +755,7 @@ class m_dataset extends CI_Model
             'gnbp_serhin' => $gnbp_serhin,
             'gnbst_serhin' => $gnbst_serhin,
             'gnba_serhin' => $gnba_serhin,
-            'gnbk_serhin' => $gnba_serhin,
+            'gnbk_serhin' => $gnbk_serhin,
             'gnbt_serhin' => $gnbt_serhin,
             'namaa' => $namaa,
             'hkf_1' => $hkf_1,
@@ -787,5 +811,12 @@ class m_dataset extends CI_Model
         );
 
         return $data;
+    }
+
+    public function perhitungan_nb($parameter, $val_param, $kategori)
+    {
+        
+        $query  = "SELECT (select count(id) from konversi_dataset where $parameter='$val_param' AND kategori='$kategori') / COUNT(id) as hasil_bagi FROM `konversi_dataset` WHERE kategori='$kategori'";
+        return $this->db->query($query)->row();
     }
 }

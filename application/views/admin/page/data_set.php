@@ -7,6 +7,7 @@
         <div class="title_left">
             <h3><i class="fa fa-table"></i> Tabel Data Set</h3>
             <a href="<?= base_url('admin/data_set/add_dataset') ?>" style="margin-left: 15px; margin-top: 20px;" class="btn btn-success"><i class="fa fa-plus"></i> Tambah Nilai</a>
+            <a href="<?= base_url('admin/data_set/konversi') ?>" style="margin-left: 15px; margin-top: 20px;" class="btn btn-success"><i class="fa fa-table"></i> Tabel Hasil Konversi</a>
         </div>
     </div>
     <div class="clearfix"></div>
@@ -57,6 +58,7 @@
                                             <td><?= $d->kategori ?></td>
                                             <td>
                                                 <a href="#editdataset<?= $d->id ?>" data-toggle="modal" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
+                                                <a href="<?= base_url('admin/data_set/konvert_dataset/' . $d->id) ?>" class="btn btn-success btn-sm"><i class="fa fa-exchange"></i> Konversi</a>
                                                 <a onclick="return confirm('apakah anda yakin ?')" href="<?= base_url('admin/data_set/delete_dataset/' . $d->id) ?>" class="btn btn-danger btn-sm tombol-hapus"><i class="fa fa-trash"></i> Hapus</a>
                                             </td>
                                         </tr>

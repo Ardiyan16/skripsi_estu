@@ -31,6 +31,7 @@
                             <ul class="nav side-menu">
                                 <li><a href="<?= base_url('admin/admin') ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
                                 <li><a href="<?= base_url('admin/data_set/perhitungan') ?>"><i class="fa fa-calculator"></i> Perhitungan Gausian</a></li>
+                                <li><a href="<?= base_url('admin/data_set/perhitungan_nb') ?>"><i class="fa fa-calculator"></i> Perhitungan Naive Bayes</a></li>
                                 <li><a href="<?= base_url('admin/admin/konfirmasi') ?>"><i class="fa fa-check"></i> Konfir User</a></li>
                                 <li><a><i class="fa fa-tasks"></i> Data <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
