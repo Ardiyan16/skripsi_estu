@@ -272,7 +272,7 @@ class data_set extends CI_Controller
 
     public function get_mean()
     {
-        $data = $this->m_dataset->perhitungan();
+        $data = $this->m_dataset->perhitungan2();
         var_dump($data);
     }
 }

@@ -31,6 +31,7 @@
                                         <th>Nama</th>
                                         <th>Hasil</th>
                                         <th>Prediksi</th>
+                                        <th>Akurasi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -54,6 +55,8 @@
                                                 <li><?= $hasil['hp8'] ?></li>
                                                 <li><?= $hasil['hp9'] ?></li>
                                                 <li><?= $hasil['hp10'] ?></li>
+                                                <li><?= $hasil['hp11'] ?></li>
+                                                <li><?= $hasil['hp12'] ?></li>
                                             </ul>
                                         </td>
                                         <td>
@@ -68,8 +71,11 @@
                                                 <li><?= $hasil['kategori_pertandingan_8'] ?></li>
                                                 <li><?= $hasil['kategori_pertandingan_9'] ?></li>
                                                 <li><?= $hasil['kategori_pertandingan_10'] ?></li>
+                                                <li><?= $hasil['kategori_pertandingan_11'] ?></li>
+                                                <li><?= $hasil['kategori_pertandingan_12'] ?></li>
                                             </ul>
                                         </td>
+                                        <td>Akurasi = <?= $hasil['hasil_akurasi'] ?> %</td>
                                     </tr>
                                 </tbody>
                             </table>
