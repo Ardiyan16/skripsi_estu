@@ -31,8 +31,8 @@
                             <ul class="nav side-menu">
                                 <li><a href="<?= base_url('admin/admin') ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
                                 <li><a href="<?= base_url('admin/data_set/perhitungan') ?>"><i class="fa fa-calculator"></i> Perhitungan Gausian</a></li>
-                                <li><a href="<?= base_url('admin/data_set/perhitungan_nb') ?>"><i class="fa fa-calculator"></i> Perhitungan Naive Bayes</a></li>
-                                <li><a href="<?= base_url('admin/admin/konfirmasi') ?>"><i class="fa fa-check"></i> Konfir User</a></li>
+                               <!--  <li><a href="<?= base_url('admin/data_set/perhitungan_nb') ?>"><i class="fa fa-calculator"></i> Perhitungan Naive Bayes</a></li> -->
+                               <!--  <li><a href="<?= base_url('admin/admin/konfirmasi') ?>"><i class="fa fa-check"></i> Konfir User</a></li> -->
                                 <li><a><i class="fa fa-tasks"></i> Data <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="<?= base_url('admin/data_set') ?>">Data Set</a></li>
@@ -40,12 +40,12 @@
                                         <li><a href="<?= base_url('admin/data_set/data_uji') ?>">Data Uji</a></li>
                                     </ul></a>
                                 </li>
-                                <li><a><i class="fa fa-user"></i> User <span class="fa fa-chevron-down"></span></a>
+                             <!--    <li><a><i class="fa fa-user"></i> User <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="<?= base_url('admin/admin/data_user') ?>">Data User</a></li>
                                         <li><a href="<?= base_url('admin/admin/v_data_nilai') ?>">Data Nilai Atlet</a></li>
                                     </ul>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                     </div>

@@ -4,7 +4,7 @@
 <!-- page content -->
 <div class="right_col" role="main">
     <!-- top tiles -->
-    <div class="row" style="display: inline-block;">
+   <!--  <div class="row" style="display: inline-block;">
         <div class="tile_count">
             <div class="col-md-3 col-sm-4  tile_stats_count">
                 <span class="count_top"><i class="fa fa-user"></i> Jumlah User</span>
@@ -23,7 +23,7 @@
                 <div class="count">4,567</div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- /top tiles -->
     <div class="col">
         <h2 style="color: #07A1C8;">
