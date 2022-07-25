@@ -62,7 +62,7 @@
                         <a data-toggle="tooltip" data-placement="top" title="Lock">
                             <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
                         </a>
-                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="<?= base_url('admin/auth/logout') ?>">
+                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="<?= base_url('auth/logout') ?>">
                             <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                         </a>
                     </div>
@@ -105,7 +105,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <a href="<?= base_url('admin/auth/logout') ?>" class="btn btn-danger">Log out</a>
+                            <a href="<?= base_url('auth/logout') ?>" class="btn btn-danger">Log out</a>
                         </div>
                     </div>
                 </div>

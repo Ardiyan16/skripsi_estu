@@ -33,7 +33,7 @@
         <div class="login_wrapper">
             <div class="animate form login_form">
                 <section class="login_content">
-                    <form method="post" action="<?= base_url('admin/auth/login') ?>">
+                    <form method="post" action="<?= base_url('auth/login') ?>">
                         <h1>Halaman Login</h1>
                         <div>
                             <?= form_error('username', '<small class="text-danger pl-3">', '</small>'); ?>

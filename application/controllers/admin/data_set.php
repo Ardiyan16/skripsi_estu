@@ -10,6 +10,12 @@ class data_set extends CI_Controller
         $this->load->library('form_validation');
         $this->load->helper('url');
         $this->load->model('m_dataset');
+        if ($this->session->userdata('status') != "2") {
+			echo "<script>
+                alert('Anda harus login terlebih dahulu');
+                window.location.href = '" . base_url('auth') . "';
+            </script>"; //Url Logi
+		}
     }
 
     public function index()
