@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class m_dataset extends CI_Model
+class M_dataset extends CI_Model
 {
     private $dataset = 'data_set';
     private $datalatih = 'data_latih';
@@ -686,6 +686,8 @@ class m_dataset extends CI_Model
         $hkf_10 = $gnbs_fight[9] * $gnbp_fight[9] * $gnbst_fight[9] * $gnba_fight[9] * $gnbk_fight[9] * $gnbt_fight[9] * $probabilitas_fight;
         $hkf_11 = $gnbs_fight[10] * $gnbp_fight[10] * $gnbst_fight[10] * $gnba_fight[10] * $gnbk_fight[10] * $gnbt_fight[10] * $probabilitas_fight;
         $hkf_12 = $gnbs_fight[11] * $gnbp_fight[11] * $gnbst_fight[11] * $gnba_fight[11] * $gnbk_fight[11] * $gnbt_fight[11] * $probabilitas_fight;
+        $hkf_13 = $gnbs_fight[12] * $gnbp_fight[12] * $gnbst_fight[12] * $gnba_fight[12] * $gnbk_fight[12] * $gnbt_fight[12] * $probabilitas_fight;
+        $hkf_14 = $gnbs_fight[13] * $gnbp_fight[13] * $gnbst_fight[13] * $gnba_fight[13] * $gnbk_fight[13] * $gnbt_fight[13] * $probabilitas_fight;
 
         //hitung hasil kategori tgr
         $hkt_1 = $gnbs_tgr[0] * $gnbp_tgr[0] * $gnbst_tgr[0] * $gnba_tgr[0] * $gnbk_tgr[0] * $gnbt_tgr[0] * $probabilitas_tgr;
@@ -700,6 +702,8 @@ class m_dataset extends CI_Model
         $hkt_10 = $gnbs_tgr[9] * $gnbp_tgr[9] * $gnbst_tgr[9] * $gnba_tgr[9] * $gnbk_tgr[9] * $gnbt_tgr[9] * $probabilitas_tgr;
         $hkt_11 = $gnbs_tgr[10] * $gnbp_tgr[10] * $gnbst_tgr[10] * $gnba_tgr[10] * $gnbk_tgr[10] * $gnbt_tgr[10] * $probabilitas_tgr;
         $hkt_12 = $gnbs_tgr[11] * $gnbp_tgr[11] * $gnbst_tgr[11] * $gnba_tgr[11] * $gnbk_tgr[11] * $gnbt_tgr[11] * $probabilitas_tgr;
+        $hkt_13 = $gnbs_tgr[12] * $gnbp_tgr[12] * $gnbst_tgr[12] * $gnba_tgr[12] * $gnbk_tgr[12] * $gnbt_tgr[12] * $probabilitas_tgr;
+        $hkt_14 = $gnbs_tgr[13] * $gnbp_tgr[13] * $gnbst_tgr[13] * $gnba_tgr[13] * $gnbk_tgr[13] * $gnbt_tgr[13] * $probabilitas_tgr;
 
         //hitung hasil kategori serhin
         $hks_1 = $gnbs_serhin[0] * $gnbp_serhin[0] * $gnbst_serhin[0] * $gnba_serhin[0] * $gnbk_serhin[0] * $gnbt_serhin[0] * $probabilitas_serhin;
@@ -714,6 +718,8 @@ class m_dataset extends CI_Model
         $hks_10 = $gnbs_serhin[9] * $gnbp_serhin[9] * $gnbst_serhin[9] * $gnba_serhin[9] * $gnbk_serhin[9] * $gnbt_serhin[9] * $probabilitas_serhin;
         $hks_11 = $gnbs_serhin[10] * $gnbp_serhin[10] * $gnbst_serhin[10] * $gnba_serhin[10] * $gnbk_serhin[10] * $gnbt_serhin[10] * $probabilitas_serhin;
         $hks_12 = $gnbs_serhin[11] * $gnbp_serhin[11] * $gnbst_serhin[11] * $gnba_serhin[11] * $gnbk_serhin[11] * $gnbt_serhin[11] * $probabilitas_serhin;
+        $hks_13 = $gnbs_serhin[10] * $gnbp_serhin[10] * $gnbst_serhin[10] * $gnba_serhin[10] * $gnbk_serhin[10] * $gnbt_serhin[10] * $probabilitas_serhin;
+        $hks_14 = $gnbs_serhin[11] * $gnbp_serhin[11] * $gnbst_serhin[11] * $gnba_serhin[11] * $gnbk_serhin[11] * $gnbt_serhin[11] * $probabilitas_serhin;
 
         //prediksi 1
         $prediksi_1 = [$hkf_1, $hkt_1, $hks_1];
@@ -847,6 +853,27 @@ class m_dataset extends CI_Model
             $kategori_pertandingan_12 = 'Serang Hindar';
         }
 
+        $prediksi_13 = [$hkf_13, $hkt_13, $hks_13];
+        $hp13 = max($prediksi_13);
+        if ($hp13 == $hkf_13) {
+            $kategori_pertandingan_13 = 'Fight';
+        } elseif ($hp13 == $hkt_13) {
+            $kategori_pertandingan_13 = 'TGR';
+        } elseif ($hp13 == $hks_13) {
+            $kategori_pertandingan_13 = 'Serang Hindar';
+        }
+
+        $prediksi_14 = [$hkf_14, $hkt_14, $hks_14];
+        $hp14 = max($prediksi_14);
+        if ($hp14 == $hkf_14) {
+            $kategori_pertandingan_14 = 'Fight';
+        } elseif ($hp14 == $hkt_14) {
+            $kategori_pertandingan_14 = 'TGR';
+        } elseif ($hp14 == $hks_14) {
+            $kategori_pertandingan_14 = 'Serang Hindar';
+        }
+
+
         //query kategori
         $this->db->select('kategori');
         $kategorii = $this->db->get('data_uji')->result();
@@ -927,7 +954,19 @@ class m_dataset extends CI_Model
             $akurasi12 = '0';
         }
 
-        $akr = [$akurasi1, $akurasi2, $akurasi3, $akurasi4, $akurasi5, $akurasi6, $akurasi7, $akurasi8, $akurasi9, $akurasi10, $akurasi11, $akurasi12];
+        if ($kategori_pertandingan_13 == $kategorii[12]->kategori) {
+            $akurasi13 = '1';
+        } else {
+            $akurasi13 = '0';
+        }
+
+        if ($kategori_pertandingan_14 == $kategorii[13]->kategori) {
+            $akurasi14 = '1';
+        } else {
+            $akurasi14 = '0';
+        }
+
+        $akr = [$akurasi1, $akurasi2, $akurasi3, $akurasi4, $akurasi5, $akurasi6, $akurasi7, $akurasi8, $akurasi9, $akurasi10, $akurasi11, $akurasi12, $akurasi13, $akurasi14];
         $jml_akr = array_sum($akr);
 
         $hasil_akr = $jml_akr / $jumlahh2 * 100;

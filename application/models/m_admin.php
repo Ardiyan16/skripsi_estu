@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class m_admin extends CI_Model
+class M_admin extends CI_Model
 {
     private $user = 'users';
     private $nilai = 'nilai';
