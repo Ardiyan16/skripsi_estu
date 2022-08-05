@@ -718,8 +718,8 @@ class M_dataset extends CI_Model
         $hks_10 = $gnbs_serhin[9] * $gnbp_serhin[9] * $gnbst_serhin[9] * $gnba_serhin[9] * $gnbk_serhin[9] * $gnbt_serhin[9] * $probabilitas_serhin;
         $hks_11 = $gnbs_serhin[10] * $gnbp_serhin[10] * $gnbst_serhin[10] * $gnba_serhin[10] * $gnbk_serhin[10] * $gnbt_serhin[10] * $probabilitas_serhin;
         $hks_12 = $gnbs_serhin[11] * $gnbp_serhin[11] * $gnbst_serhin[11] * $gnba_serhin[11] * $gnbk_serhin[11] * $gnbt_serhin[11] * $probabilitas_serhin;
-        $hks_13 = $gnbs_serhin[10] * $gnbp_serhin[10] * $gnbst_serhin[10] * $gnba_serhin[10] * $gnbk_serhin[10] * $gnbt_serhin[10] * $probabilitas_serhin;
-        $hks_14 = $gnbs_serhin[11] * $gnbp_serhin[11] * $gnbst_serhin[11] * $gnba_serhin[11] * $gnbk_serhin[11] * $gnbt_serhin[11] * $probabilitas_serhin;
+        $hks_13 = $gnbs_serhin[12] * $gnbp_serhin[12] * $gnbst_serhin[12] * $gnba_serhin[12] * $gnbk_serhin[12] * $gnbt_serhin[12] * $probabilitas_serhin;
+        $hks_14 = $gnbs_serhin[13] * $gnbp_serhin[13] * $gnbst_serhin[13] * $gnba_serhin[13] * $gnbk_serhin[13] * $gnbt_serhin[13] * $probabilitas_serhin;
 
         //prediksi 1
         $prediksi_1 = [$hkf_1, $hkt_1, $hks_1];
