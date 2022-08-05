@@ -104,6 +104,8 @@
                                                 <li><?= $perhitungan['hkf_10'] ?></li>
                                                 <li><?= $perhitungan['hkf_11'] ?></li>
                                                 <li><?= $perhitungan['hkf_12'] ?></li>
+                                                <li><?= $perhitungan['hkf_13'] ?></li>
+                                                <li><?= $perhitungan['hkf_14'] ?></li>
                                             </ul>
                                         </td>
                                     </tr>
@@ -210,6 +212,8 @@
                                                 <li><?= $perhitungan['hkt_10'] ?></li>
                                                 <li><?= $perhitungan['hkt_11'] ?></li>
                                                 <li><?= $perhitungan['hkt_12'] ?></li>
+                                                <li><?= $perhitungan['hkt_13'] ?></li>
+                                                <li><?= $perhitungan['hkt_14'] ?></li>
                                             </ul>
                                         </td>
                                     </tr>
@@ -316,6 +320,8 @@
                                                 <li><?= $perhitungan['hks_10'] ?></li>
                                                 <li><?= $perhitungan['hks_11'] ?></li>
                                                 <li><?= $perhitungan['hks_12'] ?></li>
+                                                <li><?= $perhitungan['hks_13'] ?></li>
+                                                <li><?= $perhitungan['hks_14'] ?></li>
                                             </ul>
                                         </td>
                                     </tr>
